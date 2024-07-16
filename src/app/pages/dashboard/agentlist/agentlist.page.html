@@ -1,0 +1,208 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Agents
+    </ion-title>
+    <img src="../../assets/img/App_Icon.png" class="admin-image"
+    style="position: absolute; top:6px; right:15px; box-shadow: none!important; height: 40px;" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size=12>
+        <div class="white-box">
+          <table>
+            <thead>
+              <tr>
+                <th>Mode</th>
+                <th>Agent Name</th>
+                <th>AUX</th>
+                <th>State</th>
+                <th>Time</th>
+              </tr>
+            </thead>        
+            <tbody>
+    
+
+
+
+              <tr *ngFor="let item of AgentList">
+                 <td>
+                  <ng-container [ngSwitch]="item.MODE">
+                    <span *ngSwitchCase="50">AUX</span>
+                    <span *ngSwitchCase="0">UNKNOWN</span>
+                    <span *ngSwitchCase="10">UNSTAF</span>
+                    <span *ngSwitchCase="20">AVAIL</span>
+                    <span *ngSwitchCase="30">ACD</span>
+                    <span *ngSwitchCase="40">ACW</span>
+                    <span *ngSwitchCase="60">DACD</span>
+                    <span *ngSwitchCase="80">RING</span>
+
+                    <span *ngSwitchDefault>{{ item.MODE }}</span>
+                  </ng-container>
+                 </td>
+                <td>{{item.AGENTNAME}}</td>
+                <td>{{item.AUXREASON}}</td>
+                <td>{{item.STATE}}</td>
+                <td>{{item.time}}</td>
+              </tr>
+<!--               
+              <tr>
+                <td><ion-icon class="icon-colour" name="pause-circle"></ion-icon></td>
+                <td>Paval Karmakar</td>
+                <td>AUX 11</td>
+                <td>State 11</td>
+                <td>1:00:56</td>
+              </tr>
+              
+              
+              <tr>
+                <td><ion-icon class="icon-colour" name="call"></ion-icon></td>
+                <td>Faisal Ahamed Shuvo</td>
+                <td>AUX 10</td>
+                <td>State 10</td>
+                <td>00:55</td>
+              </tr>
+              
+              
+              <tr>
+                <td><ion-icon class="icon-colour" name="pause-circle"></ion-icon></td>
+                <td>Jannatul Ferds Juthi</td>
+                <td>AUX 9</td>
+                <td>State 29</td>
+                <td>00:50</td>
+              </tr>
+              
+              
+              <tr>
+                <td><ion-icon class="icon-colour" name="cafe-sharp"></ion-icon></td>
+                <td>Prottoy Charles Gomes</td>
+                <td>AUX 8</td>
+                <td>State 8</td>
+                <td>00:45</td>
+              </tr>
+              
+              
+              <tr>
+                <td><ion-icon class="icon-colour" name="radio-button-on-outline"></ion-icon></td>
+                <td>Abdullah Al Masud</td>
+                <td>AUX 7</td>
+                <td>State 7</td>
+                <td>00:40</td>
+              </tr>
+              
+              
+              <tr>
+                <td><ion-icon class="icon-colour" name="call"></ion-icon></td>
+                <td>Md. Tariqul Islam</td>
+                <td>AUX 6</td>
+                <td>State 6</td>
+                <td>00:35</td>
+              </tr>
+              
+              
+              <tr>
+                <td><ion-icon class="icon-colour" name="call" ></ion-icon></td>
+                <td>Md. Shariful Islam</td>
+                <td>AUX 5</td>
+                <td>State 5</td>
+                <td>00:30</td>
+              </tr>
+              
+              
+              <tr>
+                <td><ion-icon class="icon-colour" name="cafe-sharp"></ion-icon></td>
+                <td>Borhan Uddin Noman</td>
+                <td>AUX 4</td>
+                <td>State 4</td>
+                <td>00:25</td>
+              </tr>
+              
+              
+              
+              <tr>
+                <td><ion-icon class="icon-colour" name="call"></ion-icon></td>
+                <td>Tahmina Elasmin</td>
+                <td>AUX 3</td>
+                <td>State 3</td>
+                <td>00:20</td>
+              </tr>
+              
+              <tr>
+                <td><ion-icon class="icon-colour" name="call"></ion-icon></td>
+                <td>Nusrat Jahan</td>
+                <td>AUX 2</td>
+                <td>State 2</td>
+                <td>00:15</td>
+              </tr>
+              
+              <tr>
+                <td><ion-icon class="icon-colour" name="call"></ion-icon></td>
+                <td>Mosafizur Rahman</td>
+                <td>AUX 1</td>
+                <td>State 1</td>
+                <td>00:10</td>
+              </tr>
+              
+               -->
+              
+                      <!-- Add more rows as needed -->
+                  </tbody>
+
+
+
+          </table>
+
+
+        </div>
+
+      </ion-col>
+
+
+    </ion-row>
+  </ion-grid>
+
+
+<ion-grid>
+  <div>
+    <p>&nbsp;
+    </p>
+  </div>
+</ion-grid>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" class="ion-no-border">
+      <ion-tab-button (click)="Home()">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button class="comments" (click)="Agents()">
+        <ion-icon name="people"></ion-icon>
+        <ion-label>Agents</ion-label>
+      </ion-tab-button>
+
+      
+
+      <ion-tab-button class="notifs" (click)="ServiceLevel()">
+        <ion-icon name="pie-chart"></ion-icon>
+        <ion-label>Service Level</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="DailyStats()">
+        <ion-icon name="stats-chart"></ion-icon>
+        <ion-label>Daily Stats</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+</ion-footer>

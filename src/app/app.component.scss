@@ -1,0 +1,23 @@
+  /* Styling for the menu title */
+  ion-title {
+    color: #fff; /* Set the text color */
+  }
+  
+  /* Styling for the menu items */
+  ion-item {
+    color: rgb(228, 111, 116); /* Set the text color */
+    padding: 10px; /* Add padding to the items */
+  }
+  
+  ion-header {
+    ion-toolbar {
+      --background: linear-gradient(0deg, rgba(228,111,116,1) 0%, rgba(212,30,38,1) 100%);
+      color: white; 
+      font-size: 3.0rem; 
+      font-weight: bolder; 
+      text-align: center;
+      display: block; 
+      box-sizing: border-box; 
+    }
+  }
+  /* Styling for the active menu item */

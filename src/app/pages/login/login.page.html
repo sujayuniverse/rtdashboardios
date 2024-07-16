@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <div class="login-logo-area">
+    <img class="logo-img" src="assets/img/App_Icon1.png" alt="">
+  </div>
+  <div class="ion-padding">
+    <form>
+      <ion-item lines="none" class="gloabal-input">
+        <ion-input required type="text" [(ngModel)]="Username" placeholder="Enter Username" name="Username" required style="height:55px;"></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="gloabal-input">
+        <ion-input required type="password" [(ngModel)]="Password" placeholder="Enter Password" name="Password" required style="height:55px;"></ion-input>
+      </ion-item>
+      <div class="buttons-area">
+        <ion-button expand="block" (click)="Login()" class="full-radious" style="height:55px;">Continue
+        </ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

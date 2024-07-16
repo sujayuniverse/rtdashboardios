@@ -1,0 +1,294 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Dashboard
+    </ion-title>
+    <img src="../../assets/img/App_Icon.png" class="admin-image"
+    style="position: absolute; top:6px; right:15px; box-shadow: none!important; height: 40px;" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-grid>
+    <h6 class="all-h6-text">Daily Stats</h6>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size=6>
+        <div class="white-box">
+          <ion-card-header>
+            <ion-card-subtitle class="ion-card-subtitle-header-footer">
+              Ansd- {{AnsweredCalls.Percentage}}%
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #pieChartCanvas5></canvas>
+          </ion-card-content>
+          <ion-card-subtitle class="ion-card-subtitle-header-footer">
+            Answered : {{AnsweredCalls.Answered}} <br>
+            Offered &nbsp;&nbsp;&nbsp;&nbsp;: {{AnsweredCalls.Offered}}
+          </ion-card-subtitle>
+        </div>
+
+      </ion-col>
+
+      <ion-col size=6>
+        <div class="white-box">
+          <ion-card-header>
+            <ion-card-subtitle class="ion-card-subtitle-header-footer">
+              Aban- {{AbandonedCalls.Percentage}}%
+            </ion-card-subtitle>
+            
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #pieChartCanvas6></canvas>
+          </ion-card-content>
+          <ion-card-subtitle class="ion-card-subtitle-header-footer">
+            Abandoned : {{AbandonedCalls.Abandon}} <br>
+            Offered &nbsp;&nbsp;&nbsp;&nbsp; :  {{AbandonedCalls.Offered}}
+          </ion-card-subtitle>
+        </div>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <h6 class="all-h6-text">Live Call Stats</h6>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size=4>
+        <div class="white-box">
+          <ion-card-header>
+            <ion-card-subtitle class="ion-card-subtitle-header">
+              Active
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+              {{LiveCallStats.IVRcalls}}
+            </ion-card-subtitle>
+          </ion-card-header>
+        </div>
+
+      </ion-col>
+
+      <ion-col size=4>
+        <div class="white-box">
+          <ion-card-header>
+            <ion-card-subtitle class="ion-card-subtitle-header">
+              Queue
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+              {{LiveCallStats.InQueue}}
+            </ion-card-subtitle>
+          </ion-card-header>
+        </div>
+
+      </ion-col>
+
+
+      <ion-col size="4">
+        <div [ngClass]="{
+                'yellow-box': LiveCallStats.waittime < '00:20',
+                'red-box': LiveCallStats.waittime >= '00:20'
+              }" class="white-box">
+          <ion-card-header>
+            <ion-card-subtitle class="ion-card-subtitle-header">
+              Waiting
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+              {{ LiveCallStats.waittime }}
+            </ion-card-subtitle>
+          </ion-card-header>
+        </div>
+      </ion-col>
+      
+
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid>
+    <h6 class="all-h6-text">Agent Group Stats</h6>
+
+    <ion-row class="ion-justify-content-center">
+
+      <ion-col size=4>
+        <div class="white-box">
+          <ion-card-header>
+            <ion-card-subtitle class="ion-card-subtitle-header">
+              Logged In
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+              {{Agentstats.ONLINE}}
+            </ion-card-subtitle>
+          </ion-card-header>
+        </div>
+      </ion-col>
+
+      <ion-col size=4>
+        <div class="white-box">
+          <ion-card-header>
+            <ion-card-subtitle class="ion-card-subtitle-header">
+              Avail
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+              {{Agentstats.AVAIL}}
+
+            </ion-card-subtitle>
+          </ion-card-header>
+        </div>
+
+      </ion-col>
+
+      <ion-col size=4>
+        <div class="white-box">
+          <ion-card-header>
+            <ion-card-subtitle class="ion-card-subtitle-header">
+              On Call
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+              {{Agentstats.ON_CALL}}
+            </ion-card-subtitle>
+          </ion-card-header>
+        </div>
+
+      </ion-col>
+
+
+      <ion-col size=4>
+        <div class="white-box">
+          <ion-card-header>
+            <ion-card-subtitle class="ion-card-subtitle-header">
+              ACW
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+              {{Agentstats.ACW}}
+            </ion-card-subtitle>
+          </ion-card-header>
+        </div>
+
+      </ion-col>
+
+      <ion-col size=4>
+        <div class="white-box">
+          <ion-card-header>
+            <ion-card-subtitle class="ion-card-subtitle-header">
+              AUX
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+              {{Agentstats.AUX}}
+            </ion-card-subtitle>
+          </ion-card-header>
+        </div>
+      </ion-col>
+
+      <ion-col size="4">
+        <div [ngClass]="{
+                'yellow-box': Agentstats.Avg_abn < '00:20',
+                'red-box': Agentstats.Avg_abn >= '00:20'
+              }" class="white-box">
+          <ion-card-header>
+            <ion-card-subtitle class="ion-card-subtitle-header">
+              ABN Time
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+              {{Agentstats.Avg_abn}}
+            </ion-card-subtitle>
+          </ion-card-header>
+        </div>
+      </ion-col>
+
+
+<!-- 
+      <ion-col size=4>
+        <div class="white-box">
+          <ion-card-header>
+            <ion-card-subtitle class="ion-card-subtitle-header">
+              ABN Time
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+              {{Agentstats.Abn}}
+            </ion-card-subtitle>
+          </ion-card-header>
+        </div>
+      </ion-col> -->
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid>
+    <h6 class="all-h6-text">Skills Stats For Current Interval</h6>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size=12>
+        <div class="white-box">
+          <table>
+            <thead>
+              <tr>
+                <th>Skill</th>
+                <th>Rcv</th>
+                <th>Avg Acd</th>
+                <th>Abn</th>
+                <th>Abn%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of SkillStatList">
+                <td>{{item.SKILL_NAME}}</td>
+                <td>{{item.OFFERED}}</td>
+                <td>{{item.AVG_ACD}}</td>
+                <td>{{item.ABN}}</td>
+                <td>{{item.ABNPercentage}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+        </div>
+
+      </ion-col>
+
+
+    </ion-row>
+  </ion-grid>
+
+
+<ion-grid>
+  <div>
+    <p>&nbsp;
+    </p>
+  </div>
+</ion-grid>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" class="ion-no-border">
+      <ion-tab-button (click)="Home()">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button class="comments" (click)="Agents()">
+        <ion-icon name="people"></ion-icon>
+        <ion-label>Agents</ion-label>
+      </ion-tab-button>
+
+      
+
+      <ion-tab-button class="notifs" (click)="ServiceLevel()">
+        <ion-icon name="pie-chart"></ion-icon>
+        <ion-label>Service Level</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="DailyStats()">
+        <ion-icon name="stats-chart" ></ion-icon>
+        <ion-label>Daily Stats</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+</ion-footer>

@@ -1,0 +1,33 @@
+.login-logo-area{background-color: #fff;padding: 80px 16px;text-align: center; border-radius: 0 0 50% 50%;}
+.login-logo-area img{max-width: 150px;}
+.center{text-align: center;}
+.login-img{width: 80px; text-align: center; margin-top: 20px;}
+.buttons-area{margin-top:10px;}
+h4{margin-top:0; margin-bottom: 20px; font-weight: 400;}
+.samll-font{font-size: 11px;}
+ion-content.background{
+    --background: #fff;
+}
+// .top-cut-bg {display: block;box-sizing: border-box;height: 50px;
+//     background: rgb(228,111,116,1);
+//     background: linear-gradient(0deg, rgba(228,111,116,1) 0%, rgba(212,30,38,1) 100%);
+// }
+
+
+// .header-text{
+//     color: white;
+//     text-align: center;
+//     // padding-top: 13px;
+// }
+ion-header {
+    ion-toolbar {
+      --background: linear-gradient(0deg, rgba(228,111,116,1) 0%, rgba(212,30,38,1) 100%);
+      color: white; 
+      font-size: 3.0rem; 
+      font-weight: bolder; 
+      text-align: center;
+      display: block; 
+      box-sizing: border-box; 
+    }
+  }
+  

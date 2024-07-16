@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Daily Stats
+    </ion-title>
+    <img src="../../assets/img/App_Icon.png" class="admin-image"
+    style="position: absolute; top:6px; right:15px; box-shadow: none!important; height: 40px;" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+
+      <ion-col size=12>
+        <div class="white-box" style="height: 220px;"> <!-- Adjust height here -->
+          <ion-card-header>
+            <ion-card-subtitle class="ion-card-subtitle-header-footer" id="timeText">
+              <!-- Avg. Call Interaction - 85% -->
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <div style="text-align: center;" id="gaugeArea"></div>
+          </ion-card-content>       
+        </div>
+      </ion-col>
+ 
+      <ion-col size="12">
+        <div class="white-box" style="height: 220px;"> <!-- Adjust height here -->
+          <ion-card-header>
+            <ion-card-subtitle class="ion-card-subtitle-header-footer" id="thresholdPercentageText">
+              <!-- Another Value - 40% -->
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <div style="text-align: center;" id="thresholdGaugeArea"></div>
+          </ion-card-content>       
+        </div>
+      </ion-col>
+      
+      <ion-col size="12">
+        <div class="white-box" style="height: 220px;"> <!-- Adjust height here -->
+          <ion-card-header>
+            <ion-card-subtitle class="ion-card-subtitle-header-footer" id="ACDTimePercentageText">
+              <!-- Another Value - 40% -->
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <div style="text-align: center;" id="ACDTimeGaugeArea"></div>
+          </ion-card-content>       
+        </div>
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
+
+
+
+
+
+
+
+  <ion-grid>
+    <div>
+      <p>&nbsp;
+      </p>
+    </div>
+  </ion-grid>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" class="ion-no-border">
+      <ion-tab-button (click)="Home()">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button class="comments" (click)="Agents()">
+        <ion-icon name="people"></ion-icon>
+        <ion-label>Agents</ion-label>
+      </ion-tab-button>
+
+
+
+      <ion-tab-button class="notifs" (click)="ServiceLevel()">
+        <ion-icon name="pie-chart"></ion-icon>
+        <ion-label>Service Level</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="DailyStats()">
+        <ion-icon name="stats-chart"></ion-icon>
+        <ion-label>Daily Stats</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+</ion-footer>
