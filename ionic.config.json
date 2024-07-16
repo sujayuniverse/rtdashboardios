@@ -1,0 +1,7 @@
+{
+  "name": "realtimedashboard",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
