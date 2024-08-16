@@ -31,8 +31,16 @@
                 "output": "./svg"
               }
             ],
+
+
+
+
+            
             "styles": ["src/global.scss", "src/theme/variables.scss"],
-            "scripts": []
+            "scripts": [],
+             "allowedCommonJsDependencies": [
+              "gauge-chart"
+             ]
           },
           "configurations": {
             "production": {
